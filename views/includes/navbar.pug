@@ -1,0 +1,34 @@
+nav
+    div.nav-wrapper
+        ul.right.hide-on-med-and-down
+            if user
+                li
+                    a(href="#!" data-target="DPP")
+                        img.right.picture(src=user.picture alt="profilePicture")
+            else
+                li
+                    a(href="/register") Register
+                li
+                    a(href="/login") Login
+
+        ul.left.hide-on-med-and-down
+            if user
+                li
+                    a(href="/#") Dashboard
+            li
+                a(href="/#") Courses
+            li
+                a(href="/#") Applications
+            li
+                a(href="/#") Students
+            if user
+                li
+                    a(href="/settings") Settings
+
+
+    ul.dropdown-content(id="DPP")
+        li
+            a(href="/#") Profile
+        li.divider.hide-on-med-and-down
+        li
+            a(href="/logout") Logout

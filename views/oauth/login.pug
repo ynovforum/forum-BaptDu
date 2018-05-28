@@ -1,0 +1,27 @@
+extends ../includes/layout
+
+block content
+    link(rel='stylesheet', href='/css/auth.css')
+    include ../includes/navbar
+
+    div.container
+        div.row
+            div.col.s12
+                div.card
+                    div.card-content.center.top
+                        div.card-title
+                            h4 Welcome back! Please login
+                    div.card-content
+                        form(method='POST' action='/login' enctype="x-www-form-urlencoded")
+                            div.row
+                                div.col.s12
+                                    label(for="username") Sign up with your e-mail address
+                                    input#username.validate(type="text" name="username")
+                            div.row
+                                div.col.s12
+                                    label(for="password") Password
+                                    input#password.validate(type="password" name="password")
+                            div.row.center
+                                button.btn.waves-effect.waves-light(type="submit" name="action") Sign in to Dashboard
+                    div.card-content.center.bottom
+                        p Login via social networks

@@ -1,27 +1,48 @@
 const express = require('express');
 const app = express();
-const APICfg = require('./app');
 
-// Use Pug to render views
-app.set("twig options", {
-    strict_variables: false
-});
-// Serve assets from the public folder
-app.use(express.static('public'));
 
-// Route API Config
-app.use(APICfg);
-
-app.get('/', function(req, res){
-    res.render('index.twig', {
-        message : "Hello World"
-    });
+app.get('/', (req, res) => {
+    res.render('home', {title: 'Home - Forum', user: req.user})
 });
 
-app.get('/profile', function(req, res){
-    res.render('profile/profile.twig', {
-        message : "Jean"
-    });
+//Gestion Users
+app.get('/settings', (req, res) => {
+    const user = req.user;
+
+    if(user){
+        res.render('profile/settings', {title: 'Settings - Forum',title_page: 'Settings', user: req.user})
+    }else{
+        res.render('oauth/login')
+    }
+});
+
+
+
+// Gestion de l'Auth
+app.get('/login', (req, res) => {
+    const user = req.user;
+
+    if (!user) {
+        res.render('oauth/login', {title: 'Mon Espace Membre - Forum'})
+    } else {
+        res.redirect('profile/settings')
+    }
+});
+
+app.get('/register', (req, res) => {
+    const user = req.user;
+
+    if (!user) {
+        res.render('oauth/register', {title: 'Nouveau client - Forum'})
+    } else {
+        res.redirect('profile/settings')
+    }
+});
+
+app.get('/logout', function (req, res) {
+    req.logout();
+    res.redirect('/');
 });
 
 module.exports = app;

@@ -1,17 +1,13 @@
-const Sequelize = require('sequelize');
-const cfg = require('../config/tsconfig.json');
-const UserModel = require('../src/Users/UserModel');
+const Sequelize = require('Sequelize');
+const UserModel = require('../src/User/UserModel');
 
-
-
-const database = new Sequelize(cfg.db.name, cfg.db.user, cfg.db.password, {
-    host: cfg.db.host,
-    dialect: cfg.db.type
+const database = new Sequelize('forum', 'root', '', {
+    host: 'localhost',
+    password: null,
+    dialect: 'mysql'
 });
 
-const Users = UserModel(database, Sequelize);
-
-
+const User = UserModel(database, Sequelize);
 
 database.sync({force: false})
     .then(() => {
@@ -19,5 +15,5 @@ database.sync({force: false})
     });
 
 module.exports = {
-       Users,
+    User,
 };

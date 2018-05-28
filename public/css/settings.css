@@ -1,0 +1,14 @@
+img.pp {
+    border-radius: 90px;
+    width: 50%;
+    margin-top: 10%;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background: #37B148;
+}
+
+.btn, .btn-large, .btn-small {
+    margin-top: 40%;
+    background: #37B148;
+}

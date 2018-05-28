@@ -1,10 +1,11 @@
 const express = require('express');
 const app = express();
 
-const UserAPI = require('./Users/UserRoutes');
+const userAPI = require('./User/UsersRoutes');
+
 const oauthAPI = require('./Oauth/AuthRoutes');
 
-app.use('/api/user', UserAPI);
-app.use('/api/oauth/', oauthAPI);
+app.use('/', oauthAPI);
+app.use('/user', userAPI);
 
 module.exports = app;

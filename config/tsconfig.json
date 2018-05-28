@@ -1,16 +1,10 @@
 {
-  "db": {
-    "name": "forum",
-    "user": "root",
-    "password": "",
-    "host": "localhost",
-    "type": "mysql"
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true
   },
-  "project":{
-    "name": "Forum",
-    "description" : "Integration NodeJs",
-    "url": "https://github.com/ynovforum/forum-BaptDu"
-  },
-  "JWT_TOKEN": "secret",
-  "SECRET_SESSION" :"iy98859dgr9n38984y4h498"
+  "exclude": [
+    "node_modules"
+  ]
 }

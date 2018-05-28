@@ -1,0 +1,45 @@
+extends ../includes/layout.pug
+
+block content
+    link(rel='stylesheet', href='/css/settings.css')
+    include ../includes/navbar.pug
+    include ../includes/navCustomize.pug
+
+    div.container
+        div.row
+            div.col.s12
+                div.col.s6
+                    div.col.s12.m12
+                        div.card-panel
+                            span zofkzpoefkzpoefkzpoefkzpoefkzpeofkzoefkzeofkzef
+                div.col.s6
+                    div.col.s12.m12
+                        div.card-panel
+                            h4 My Profile
+                                div.row
+                                    div.col.s7.push-s5
+                                        label Your Name
+                                        input.validate(type="text" name="username" value=user.name )
+                                    div.col.s5.pull-s7
+                                        img.pp(src=user.picture alt="profilePicture")
+                                div.row
+                                    div.col.s12
+                                        label Bio
+                                        textarea.materialize-textarea.validate(name="bio" value=user.bio)
+                                div.row
+                                    form(method='PATCH' action='/user/:userId' enctype="x-www-form-urlencoded")
+                                        div.col.s8
+                                            label(for="username") E-mail Address
+                                            input#username.validate(type="text" name="username" value=user.username)
+                                        div.col.s4
+                                            button.btn.waves-effect.waves-light(type="submit" name="action") Change
+                                div.row
+                                    form(method='PATCH' action='/user/:userId' enctype="x-www-form-urlencoded")
+                                        div.col.s8
+                                            label(for="password") Password
+                                            input#password.validate(type="password" name="password" value=user.password)
+                                        div.col.s4
+                                            button.btn.waves-effect.waves-light(type="submit" name="action") Change
+                    div.col.s12.m12
+                        div.card-panel
+                            span fzefzefzefzefzefzefzef
