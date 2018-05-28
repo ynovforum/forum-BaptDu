@@ -1,0 +1,19 @@
+{
+  "name": "forum-baptdu",
+  "version": "1.0.0",
+  "description": "Learning nodesjs and using packages to set up an API and integration",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ynovforum/forum-BaptDu.git"
+  },
+  "author": "Baptiste DUMONT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ynovforum/forum-BaptDu/issues"
+  },
+  "homepage": "https://github.com/ynovforum/forum-BaptDu#readme"
+}
