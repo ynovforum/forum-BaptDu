@@ -1,0 +1,23 @@
+button {
+  background-color: #4CAF50;
+  margin: 8px 0;
+  cursor: pointer;
+  padding: 14px 25px;
+  transition: opacity 0.5ms ease-in-out;
+  border: 3px solid #4CAF50;
+  border-radius: 6px;
+  color: white;
+  &.large {
+    width: 100%;
+  }
+  &.medium {
+    width: 50%;
+  }
+  &.small {
+    width: 25%;
+  }
+}
+
+button:hover {
+  opacity: 0.8;
+}

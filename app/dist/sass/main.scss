@@ -1,0 +1,16 @@
+@import 'layout/grid',
+'layout/input',
+'layout/elements';
+@import 'themes/colors',
+'themes/fonts';
+@import 'components/buttons';
+@import 'pages/auth';
+
+// Global Code
+body {
+  background: $label-picture;
+  margin: 0;
+  padding: 0;
+}
+
+

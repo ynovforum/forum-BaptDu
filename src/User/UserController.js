@@ -1,4 +1,4 @@
-const {User} = require('../../database/data');
+const {User} = require('../../app/database/data');
 
 
 exports.users_create = function (req, res) {

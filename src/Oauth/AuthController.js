@@ -1,30 +1,31 @@
-const {User} = require('../../database/data');
+const {User} = require('../../app/database/data');
+const bcrypt = require('bcrypt');
 
 
 exports.register = function (req, res) {
 
     const bio = req.body.bio;
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
+    const name = req.body.name;
     const email = req.body.email;
     const picture = req.body.picture;
-    const password = req.body.password;
 
-    User
-        .sync()
-        .then(function () {
-            User.create({
-                firstName: firstName,
-                lastName: lastName,
-                bio: bio,
-                email: email,
-                picture: picture,
-                password: password
-            });
-            res.redirect('/login');
-        })
-        .catch((error) => {
-            res.render('500', {error: error});
-        })
+    bcrypt.hash(req.body.password, 10, function (err, hash) {
+        User
+            .sync()
+            .then(function () {
+                User.create({
+                    name: name,
+                    bio: bio,
+                    email: email,
+                    picture: picture,
+                    password: hash
+                });
+                res.redirect('/login');
+            })
+            .catch((error) => {
+                res.render('500', {error: error});
+            })
+    })
+
 
 };

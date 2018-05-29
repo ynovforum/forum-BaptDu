@@ -2,26 +2,27 @@ extends ../includes/layout
 
 block content
     link(rel='stylesheet', href='/css/auth.css')
-    include ../includes/navbar
-
     div.container
-        div.row
-            div.col.s12
-                div.card
-                    div.card-content.center.top
-                        div.card-title
-                            h4 Welcome back! Please login
-                    div.card-content
-                        form(method='POST' action='/login' enctype="x-www-form-urlencoded")
-                            div.row
-                                div.col.s12
-                                    label(for="username") Sign up with your e-mail address
-                                    input#username.validate(type="text" name="username")
-                            div.row
-                                div.col.s12
-                                    label(for="password") Password
-                                    input#password.validate(type="password" name="password")
-                            div.row.center
-                                button.btn.waves-effect.waves-light(type="submit" name="action") Sign in to Dashboard
-                    div.card-content.center.bottom
-                        p Login via social networks
+        div.row_center
+            div.login
+                form(method='POST' action='/login' enctype="x-www-form-urlencoded")
+                    div.login_title.center_element_row
+                        div.ico.circle
+                            img.logo(src="https://png.icons8.com/ios/100/000000/sent.png")
+                        p.head1 Welcome Back ! Please login
+                    div.login_content
+                        label.paragraph_style(for="email") Sign up with your e-mail address
+                        input#email.validate(type="text" name="username")
+
+                        label.paragraph_style(for="password") Password
+                        input#password.validate(type="password" name="password")
+
+                        button.large(type="submit" name="action") Sign in to Dashboard
+                        hr.divider.right
+                        hr.divider.left
+                        p.center_element_row Login via social networks
+                        div.center_element_row
+                            img(src="https://png.icons8.com/color/100/000000/twitter-squared.png")
+                            img(src="https://png.icons8.com/color/100/000000/facebook.png")
+                            img(src="https://png.icons8.com/color/100/000000/pinterest.png")
+                            img(src="https://png.icons8.com/color/100/000000/linkedin.png")

@@ -1,0 +1,53 @@
+.login {
+  margin-left: 20%;
+  margin-right: 20%;
+  &_title {
+    border: 0.5px solid;
+    background-color: #F8FAFC;
+  }
+  &_content {
+    border: 0.5px solid;
+    border-top: none;
+    padding-top: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    background-color: #ffffff;
+  }
+}
+
+img {
+  width: 82px;
+  height: 82px;
+  &.logo{
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.ico {
+  position: absolute;
+  top: -25px;
+  &.circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #1E95EE;
+  }
+}
+
+.divider{
+  position: relative;
+  height: 1px;
+  margin: 0.5em 10em;
+  color: #000;
+  background-color: black;
+  border: 0;
+  &.right{
+    top: 37px;
+    right: 140px;
+  }
+  &.left{
+    top: 28px;
+    left: 140px;
+  }
+}

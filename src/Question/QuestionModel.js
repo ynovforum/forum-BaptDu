@@ -1,34 +1,21 @@
 module.exports = (database, DataType) => {
-    return database.define('user', {
+    return database.define('questions', {
         id: {
             type: DataType.UUID,
             primaryKey: true,
             defaultValue: DataType.UUIDV4
         },
-        name: {
+        title: {
                 type: DataType.STRING,
                 require: true
         },
-        email: {
+        description: {
             type: DataType.STRING,
             require: true
         },
-        bio: {
-            type: DataType.TEXT,
+        resolvedAt: {
+            type: DataType.BOOLEAN,
             require: false
-        },
-        picture: {
-            type: DataType.STRING,
-            require: false
-        },
-        password: {
-            type: DataType.STRING,
-            require: false
-        },
-        role:{
-          type: DataType.ENUM,
-          values:['user', 'admin'],
-          defaultValue: 'user',
         },
         created_at: {
             type: DataType.DATE,

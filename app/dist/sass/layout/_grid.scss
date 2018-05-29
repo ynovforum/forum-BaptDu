@@ -1,0 +1,28 @@
+.container{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, [col] 1fr ) ;
+  grid-template-rows: repeat(2, [row] auto  );
+  margin-top: 5%;
+}
+
+.row_left{
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  position: relative;
+}
+
+.row_center{
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  position: relative;
+}
+
+.row_right{
+  grid-row-start: 2 ;
+  grid-column-start: 4;
+  grid-column-end: 4;
+  position: relative;
+}

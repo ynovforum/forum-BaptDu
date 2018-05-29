@@ -6,8 +6,8 @@ const AuthController = require('./AuthController');
 
 router.route('/login')
     .post(passport.authenticate('local', {
-        failureRedirect: '/',
-        successRedirect: '/settings'
+        failureRedirect: '/login',
+        successRedirect: '/'
     }));
 
 router.route('/register')

@@ -10,7 +10,7 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const COOKIE_SECRET = 'cookie secret';
 
-require('./config/passport');
+require('./app/config/passport');
 
 app.set('view engine', 'pug');
 
@@ -32,4 +32,4 @@ app.use(passport.session());
 app.use(APIPoint);
 app.use(APIView);
 
-module.exports = app;
+app.listen(process.env.SRV_PORT);

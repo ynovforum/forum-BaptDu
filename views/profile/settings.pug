@@ -1,9 +1,8 @@
-extends ../includes/layout.pug
+extends ../includes/layout
 
 block content
     link(rel='stylesheet', href='/css/settings.css')
-    include ../includes/navbar.pug
-    include ../includes/navCustomize.pug
+    include ../includes/navbar
 
     div.container
         div.row
@@ -29,8 +28,8 @@ block content
                                 div.row
                                     form(method='PATCH' action='/user/:userId' enctype="x-www-form-urlencoded")
                                         div.col.s8
-                                            label(for="username") E-mail Address
-                                            input#username.validate(type="text" name="username" value=user.username)
+                                            label(for="email") E-mail Address
+                                            input#email.validate(type="text" name="email" value=user.email)
                                         div.col.s4
                                             button.btn.waves-effect.waves-light(type="submit" name="action") Change
                                 div.row

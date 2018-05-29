@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "gulp server"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,19 @@
     "pug": "^2.0.3",
     "request": "^2.87.0",
     "sequelize": "^4.37.10"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "latest",
+    "gulp-cssbeautify": "latest",
+    "gulp-csscomb": "latest",
+    "gulp-csso": "latest",
+    "gulp-less": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "latest",
+    "gulp-sass": "^4.0.1"
   }
 }
