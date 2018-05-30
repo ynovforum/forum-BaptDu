@@ -1,23 +1,22 @@
 button {
-  background-color: #4CAF50;
-  margin: 8px 0;
+  background-color: #25B10E;
+  margin-top: 25px;
   cursor: pointer;
-  padding: 14px 25px;
   transition: opacity 0.5ms ease-in-out;
   border: 3px solid #4CAF50;
   border-radius: 6px;
   color: white;
   &.large {
+    padding: 14px 25px;
     width: 100%;
   }
-  &.medium {
-    width: 50%;
-  }
   &.small {
-    width: 25%;
+    padding: 6px 16px;
+    margin-left: 10%;
+    margin-top: 30px;
   }
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: #1F980A;
 }

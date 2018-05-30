@@ -1,11 +1,45 @@
 input[type=text],
 input[type=email],
 input[type=password]{
+  background-color: #FFFFFF;
+  width: 100%;
+  font-family: $font-regular;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  &:focus{
+  border: $border-color solid thin;
+  }
+}
+
+input[value=""]{
+  border: $border-color solid thin;
+}
+
+input:not([value=""]){
+  border: $border-value-color solid thin;
+}
+
+textarea {
+  background-color: #FFFFFF;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #878787;
-  background: #DBDBDB;
+  border-radius: 4px;
   box-sizing: border-box;
+  resize: none;
+  &:focus{
+    border: $border-color solid thin;
+  }
+}
+
+textarea[value=""]{
+  border: #DFE3E9 solid thin;
+}
+
+textarea:not([value=""]){
+  border: $border-value-color solid thin;
 }

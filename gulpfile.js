@@ -13,7 +13,7 @@ const destination = './public'; // dossier à livrer
 
 // Tâche "build" = LESS + autoprefixer + CSScomb + beautify (source -> destination)
 gulp.task('sass', function () {
-    return gulp.src(source + '/sass/*.scss')
+    return gulp.src(source + '/sass/main.scss')
         .pipe(plugins.sass())
         .pipe(plugins.autoprefixer())
         .pipe(gulp.dest(destination + '/css/'));

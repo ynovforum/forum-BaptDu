@@ -1,10 +1,14 @@
+@import 'themes/colors',
+'themes/fonts';
 @import 'layout/grid',
 'layout/input',
 'layout/elements';
-@import 'themes/colors',
-'themes/fonts';
-@import 'components/buttons';
-@import 'pages/auth';
+@import 'components/buttons',
+'components/nav',
+'components/card';
+@import 'pages/auth',
+'pages/home',
+'pages/settings';
 
 // Global Code
 body {
@@ -12,5 +16,14 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.picH{
+  width: 32px;
+  height: 32px;
+  position: relative;
+  top: 20%;
+}
+
+
 
 

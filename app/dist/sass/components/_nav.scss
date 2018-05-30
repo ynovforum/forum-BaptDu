@@ -1,0 +1,15 @@
+.nav {
+  background-color: #269CF4;
+  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 1ms ease-in-out;
+    border-radius: 10%;
+    &:hover {
+      background-color: #1166A5;
+    }
+  }
+}

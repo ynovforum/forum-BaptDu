@@ -1,14 +1,16 @@
-ul
+ul.nav
     if user
         li
-            a(href="/#") Dashboard
+            a(href="/#") Events
     li
-        a(href="/#") Issue
+        a(href="/#") Browse
     if user
+        li
+            a(href="/Ticket") Your Ticket
         li
             a(href="/settings") Settings
 
-    div.right
+    div.right_element_row
         if user
             li
                 img(src=user.picture alt="profilePicture")

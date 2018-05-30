@@ -1,28 +1,73 @@
-.container{
+.container_full_page{
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(4, [col] 1fr ) ;
-  grid-template-rows: repeat(2, [row] auto  );
-  margin-top: 5%;
+  grid-template-columns: repeat(12, [col] 1fr ) ;
+  grid-template-rows: repeat(4, [row] auto  );
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.row_left{
-  grid-row-start: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  position: relative;
+@for $i from 1 through 13 {
+  .CS_#{$i} {
+    grid-column-start: 1 + $i;
+  }
 }
 
-.row_center{
-  grid-row-start: 2;
-  grid-column-start: 2;
-  grid-column-end: 4;
-  position: relative;
+@for $i from 1 through 13 {
+  .CE_#{$i} {
+    grid-column-end: 1 + $i;
+  }
 }
 
-.row_right{
-  grid-row-start: 2 ;
-  grid-column-start: 4;
-  grid-column-end: 4;
-  position: relative;
+@for $i from 1 through 5 {
+  .RS_#{$i} {
+    grid-row-start: 1 + $i;
+  }
+}
+
+@for $i from 1 through 5 {
+  .RE_#{$i} {
+    grid-row-end: 1 + $i;
+  }
+}
+
+// width
+@for $i from 1 through 10{
+  .w#{$i} {
+    width: 100% / $i
+  }
+}
+
+// margin
+@for $i from 1 through 5{
+  .ml-#{$i} {
+    margin-left: 100% / $i
+  }
+}
+
+@for $i from 1 through 5{
+  .mr-#{$i} {
+    margin-right: 100% / $i
+  }
+}
+
+//padding
+
+@for $i from 1 through 30{
+  .padT-#{$i} {
+    padding-top: 100% / $i;
+  }
+}
+
+@for $i from 1 through 30{
+  .pad-#{$i} {
+    padding-left: 100% / $i;
+    padding-right: 100% / $i
+  }
+   &.padB-#{$i} {
+     padding-bottom: 100% / $i;
+   }
 }

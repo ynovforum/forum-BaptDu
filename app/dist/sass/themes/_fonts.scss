@@ -1,32 +1,42 @@
-//Headline
+$font-semiblod : "Source Sans Pro Semiblod", sans-serif;
+$font-regular : "Source Sans Pro Regular", sans-serif;
 
-.head1{
+
+h1 {
+  font-family: $font-semiblod;
+  color: $font-color-black;
   font-size: 32px;
   line-height: 44px;
 }
 
-.head2{
+h2 {
+  font-family: $font-regular;
+  color: $font-color-black;
   font-size: 22px;
   line-height: 32px;
 }
 
-.head3{
+h3 {
+  font-family: $font-regular;
+  color: $font-color-yellow;
   font-size: 20px;
   line-height: 28px;
 }
 
-.paragraph_style{
-  font-size: 16px;
+p {
+  font-family: $font-regular;
+  color: $font-color-yellow;
+  font-size: 15px;
   line-height: 24px;
 }
 
-.add_paragraph_footer{
+.link {
+  font-family: $font-semiblod;
+  color: #00AEEF ;
   font-size: 14px;
   line-height: 22px;
-}
-
-.link_style{
-  font-size: 14px;
-  line-height: 22px;
+  &:focus{
+    color: #009AD4;
+  }
 }
 
