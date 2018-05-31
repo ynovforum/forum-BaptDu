@@ -1,5 +1,5 @@
 module.exports = (database, DataType) => {
-    return database.define('questions', {
+    return database.define('question', {
         id: {
             type: DataType.UUID,
             primaryKey: true,
@@ -9,13 +9,14 @@ module.exports = (database, DataType) => {
                 type: DataType.STRING,
                 require: true
         },
-        description: {
-            type: DataType.STRING,
+        content: {
+            type: DataType.TEXT,
             require: true
         },
         resolvedAt: {
             type: DataType.BOOLEAN,
-            require: false
+            require: false,
+            defaultValue: false
         },
         created_at: {
             type: DataType.DATE,

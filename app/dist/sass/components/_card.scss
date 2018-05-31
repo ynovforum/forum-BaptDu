@@ -1,9 +1,42 @@
 .card{
   display: block;
   border-radius: 2%;
-  width: 100%; /*1*/
-  margin: 0 auto; /*2*/
-  background-color: white; /*3*/
-  box-shadow: 0 5px 20px #999; /*4*/
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 5px 20px #999;
+  height: auto;
 }
+
+.cardPicture{
+  width: 400px;
+  height: 220px;
+}
+
+.cardButton{
+  position: relative;
+  top: -20px;
+  right: -120px;
+  height: 37px;
+  width: 110px;
+}
+
+.cardTitle{
+  font-size: 14px;
+  line-height: 5px;
+
+}
+
+.cardSubTile{
+  font-size: 12px;
+  line-height: 3px;
+}
+
+.tb{
+  padding-left: 35px;
+  padding-right: 80px;
+}
+
+
+
 

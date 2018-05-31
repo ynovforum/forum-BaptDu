@@ -1,85 +1,130 @@
-const {Question} = require('../../app/database/data');
+const {Question, User} = require('../../app/database/data');
 
+/*
+*  Code d'affichage des questions [FindAll]
+* --------------------------------------------------
+* */
 
 exports.question_list = function (req, res) {
 
     Question
         .findAll()
-        .then(Questions => res.json(Questions))
-        .catch((error) => {
-            res.render('500', {error: error});
+        .then((question) => {
+            res.render('home', {question, user: req.user})
         })
+};
+
+/*
+*  Code de création d'une question [Create]
+* --------------------------------------------------
+* */
+
+exports.question_create_get = function (req, res) {
+
+    res.render('ticket/ticketAdd', {user: req.user})
 
 };
 
-exports.question_create = function (req, res) {
+exports.question_create_post = function (req, res) {
 
     const title = req.body.title;
-    const description = req.body.firstName;
+    const content = req.body.content;
 
     Question
         .sync()
         .then(function () {
             Question.create({
                 title: title,
-                description: description,
-                userId: req.query.userId
+                content: content,
+                user_id: req.user.id
             });
             res.redirect('/');
         })
         .catch((error) => {
             res.render('500', {error: error});
+            console.log(error)
         })
 
 };
 
-exports.question_detail = function (req, res) {
+/*
+*  Code d'affichage d'une question [FindId]
+* --------------------------------------------------
+* */
 
-    const id = req.params.questionId;
+exports.question_detail_get = function (req, res) {
 
     Question
-        .find({
-            where: {id: id}
+        .findOne({
+            where: {
+                id: req.params.questionId
+            }, include: [User]
         })
-        .then(Question => res.json(Question))
-        .catch((error) => {
-            res.render({error: error})
+        .then((question) => {
+            res.render('ticket/ticket', {question, user: req.user});
         })
 };
 
-exports.question_update = function (req, res) {
+/*
+*  Code de mise à jour d'une question [Update]
+* --------------------------------------------------
+* */
 
-    const id = req.params.questionId;
-    const updates = req.body.updates;
+exports.question_update_get = function (req, res) {
+
 
     Question
-        .find({
-            where: {id: id}
+        .findOne({
+            where: {
+                id: req.params.questionId
+            }
         })
-        .then(User => {
-            return User.updateAttributes(updates)
-        })
-        .then(updatedQuestion => {
-            res.json(updatedQuestion);
-        })
-        .catch((error) => {
-            res.render({error: error})
+        .then((question) => {
+            res.render('ticket/ticketEdit', {question, user: req.user})
         })
 };
 
+
+exports.question_update_patch = function (req, res) {
+
+    const title = req.body.title;
+    const content = req.body.content;
+    const resolvedAt = req.body.resolvedAt;
+
+    Question
+        .update({content: content, title: title,resolvedAt: resolvedAt, user_id: req.user.id},
+            {where: {id: req.params.questionId}}
+        ).then(() => {
+        res.redirect('/');
+    });
+}
+;
+
+/*
+*  Code de suppretion d'une question [Deleted]
+* --------------------------------------------------
+* */
+
+exports.question_delete_get = function (req, res) {
+
+    Question
+        .findOne({
+            where: {
+                id: req.params.questionId
+            }
+        })
+        .then(() => {
+            res.redirect('/');
+        });
+};
 
 exports.question_delete = function (req, res) {
 
-    const id = req.params.questionId;
-
     Question
         .destroy({
-            where: {id: id}
+            where: {id: req.params.questionId}
         })
-        .then(deleteQuestion => {
-            res.json(deleteQuestion);
-        })
-        .catch((error) => {
-            res.render({error: error})
-        })
+        .then(() => {
+            res.redirect('/');
+        });
 };

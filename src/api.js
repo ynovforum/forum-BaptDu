@@ -5,8 +5,8 @@ const userAPI = require('./User/UserRoutes');
 const questionAPI = require('./Question/QuestionRoutes');
 const oauthAPI = require('./Oauth/AuthRoutes');
 
-app.use('/', oauthAPI);
+app.use('/oauth', oauthAPI);
 app.use('/user', userAPI);
-app.use('/question', questionAPI);
+app.use(questionAPI);
 
 module.exports = app;

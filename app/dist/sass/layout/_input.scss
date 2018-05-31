@@ -43,3 +43,17 @@ textarea[value=""]{
 textarea:not([value=""]){
   border: $border-value-color solid thin;
 }
+
+label{
+  font-family: $font-regular;
+  color: $font-color-yellow;
+}
+
+.form_input{
+  width: 96%;
+  padding-right: 5px;
+}
+
+label{
+  margin: 1%;
+}

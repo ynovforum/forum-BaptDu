@@ -1,0 +1,21 @@
+extends ../includes/layout
+
+block content
+    include ../includes/navbar
+
+    div.container_full_page
+        div.CS_1.CE_11.RS_1.RE_2
+            div.card
+                div.align_column_row
+                    div.w2
+
+                    div.w1.pad-25
+                        form(method='POST' action='/addticket' enctype="x-www-form-urlencoded")
+                                label(for="title") Title
+                                input#title(type="text" name="title")
+
+                                label(for="content") Your Description
+                                textarea#content(name="content")
+
+                                div.right_element_row
+                                    button.BtnValide(type="submit" name="action") Submit

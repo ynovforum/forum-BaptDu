@@ -5,20 +5,9 @@ div {
       margin-right: 20px;
     }
   }
-}
-
-.view_name {
-  position: absolute;
-  width: 35%;
-  top: 13%;
-  right: 45%;
-  margin: 5px;
-}
-
-.change_profile {
-  position: absolute;
-  right: 25%;
-  margin: 5px;
+  &.border{
+    border-bottom: $font-color-yellow solid thin;
+  }
 }
 
 .circle {

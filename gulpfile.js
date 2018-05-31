@@ -42,7 +42,7 @@ gulp.task('server', ['sass'], function () {
         // the script to run the app
         script: './app.js',
         // this listens to changes in any of these files/routes and restarts the application
-        watch: ["app/*.js", 'app/**/*.js'],
+        watch: ["src/*.js", 'src/**/*.js'],
         env: {
             "COOKIE_SECRET": "secret",
             "DATABASE":"forum",

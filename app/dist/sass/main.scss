@@ -8,22 +8,18 @@
 'components/card';
 @import 'pages/auth',
 'pages/home',
+'pages/addTicket',
 'pages/settings';
 
 // Global Code
 body {
-  background: $label-picture;
+  //background-image: url("https://media.discordapp.net/attachments/450559026338594827/451390550076293130/Question.png?width=876&height=566");
+  //background-repeat: no-repeat;
+  //background-size: 100% auto;
+  background-color: #DBDBDB;
   margin: 0;
   padding: 0;
 }
-
-.picH{
-  width: 32px;
-  height: 32px;
-  position: relative;
-  top: 20%;
-}
-
 
 
 

@@ -1,0 +1,28 @@
+table{
+  border-collapse: collapse;
+  display: block;
+  border-radius: 2%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+td, th {
+  border-bottom: 1px solid #ddd;
+  padding-top: 10px;
+  width: 35%;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #F5F8FA;
+  color: $font-color-black;
+}
+
+.table{
+  width: 100px;
+  padding: 5px 35px;
+  margin: auto;
+}

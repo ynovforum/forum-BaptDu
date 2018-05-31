@@ -3,18 +3,32 @@ const router = express.Router();
 
 const question_controller = require('./QuestionController');
 
-router.route('/')
-    .get(question_controller.question_list)
+router.route('/')  //   Route pour afficher toute les questions
 
-    .post(question_controller.question_create);
+    .get(question_controller.question_list);
 
-router.route('/:questionId')
-    .get(question_controller.question_detail)
+router.route('/addticket') // Route pour ajouter des questions
 
+    .get(question_controller.question_create_get)
 
-    .patch(question_controller.question_update)
+    .post(question_controller.question_create_post);
 
+router.route('/ticket/:questionId') // Route pour affichier une question
+
+    .get(question_controller.question_detail_get);
+
+router.route('/ticket/:questionId/edit') // Route pour modifier les questions
+
+    .get(question_controller.question_update_get)
+
+    .put(question_controller.question_update_patch);
+
+router.route('/ticket/:questionId/delete') // Route pour supprimer une question
+
+    .get(question_controller.question_delete)
 
     .delete(question_controller.question_delete);
+
+
 
 module.exports = router;

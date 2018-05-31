@@ -1,4 +1,5 @@
 h1 {
+  margin: 0;
   font-family: "Source Sans Pro Semiblod", sans-serif;
   color: #393C3E;
   font-size: 32px;
@@ -32,14 +33,13 @@ p {
 
 .container_full_page {
   display: grid;
-  grid-gap: 10px;
+  grid-row-gap: 45px;
+  grid-column-gap: 75px;
   grid-template-columns: repeat(12, [col] 1fr);
-  grid-template-rows: repeat(4, [row] auto);
+  grid-template-rows: repeat(2, [row] auto);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3%;
-  padding-left: 15px;
-  padding-right: 15px; }
+  opacity: .7; }
 
 .CS_1 {
   grid-column-start: 2; }
@@ -509,6 +509,14 @@ p {
 .padB-30 {
   padding-bottom: 3.33333%; }
 
+.right {
+  padding-right: 12%;
+  padding-left: 1%; }
+
+.left {
+  padding-left: 8%;
+  padding-right: 6%; }
+
 input[type=text],
 input[type=email],
 input[type=password] {
@@ -549,6 +557,17 @@ textarea[value=""] {
 textarea:not([value=""]) {
   border: #DFE3E9 solid thin; }
 
+label {
+  font-family: "Source Sans Pro Regular", sans-serif;
+  color: #71787E; }
+
+.form_input {
+  width: 96%;
+  padding-right: 5px; }
+
+label {
+  margin: 1%; }
+
 .center_element_row {
   display: flex;
   flex-direction: row;
@@ -585,7 +604,7 @@ ul {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin: 0; }
+    margin-right: 30px; }
     ul img.pp {
       width: 32px;
       height: 32px; }
@@ -594,9 +613,6 @@ ul {
         padding: 0;
         border-radius: 0; }
 
-li + p {
-  font-size: 10px; }
-
 button {
   background-color: #25B10E;
   margin-top: 25px;
@@ -604,10 +620,14 @@ button {
   transition: opacity 0.5ms ease-in-out;
   border: 3px solid #4CAF50;
   border-radius: 6px;
-  color: white; }
+  color: white;
+  font-size: 15px; }
   button.large {
     padding: 14px 25px;
     width: 100%; }
+  button.medium {
+    padding: 10px 16px;
+    width: 25%; }
   button.small {
     padding: 6px 16px;
     margin-left: 10%;
@@ -617,12 +637,13 @@ button:hover {
   background-color: #1F980A; }
 
 .nav {
-  background-color: #269CF4; }
+  background-color: #269CF4;
+  opacity: .3; }
   .nav a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 13px 16px;
     text-decoration: none;
     transition: background-color 1ms ease-in-out;
     border-radius: 10%; }
@@ -633,13 +654,33 @@ button:hover {
   display: block;
   border-radius: 2%;
   width: 100%;
-  /*1*/
   margin: 0 auto;
-  /*2*/
   background-color: white;
-  /*3*/
   box-shadow: 0 5px 20px #999;
-  /*4*/ }
+  height: auto; }
+
+.cardPicture {
+  width: 400px;
+  height: 220px; }
+
+.cardButton {
+  position: relative;
+  top: -20px;
+  right: -120px;
+  height: 37px;
+  width: 110px; }
+
+.cardTitle {
+  font-size: 14px;
+  line-height: 5px; }
+
+.cardSubTile {
+  font-size: 12px;
+  line-height: 3px; }
+
+.tb {
+  padding-left: 35px;
+  padding-right: 80px; }
 
 .login {
   margin-left: 20%;
@@ -685,21 +726,42 @@ img {
     top: 28px;
     left: 140px; }
 
+table {
+  border-collapse: collapse;
+  display: block;
+  border-radius: 2%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white; }
+
+td, th {
+  border-bottom: 1px solid #ddd;
+  padding-top: 10px;
+  width: 35%; }
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #F5F8FA;
+  color: #393C3E; }
+
+.table {
+  width: 100px;
+  padding: 5px 35px;
+  margin: auto; }
+
+.BtnValide {
+  width: 25%;
+  height: 40px;
+  margin-bottom: 5%; }
+
 div img.pp {
   border-radius: 50%;
   margin-right: 20px; }
 
-.view_name {
-  position: absolute;
-  width: 35%;
-  top: 13%;
-  right: 45%;
-  margin: 5px; }
-
-.change_profile {
-  position: absolute;
-  right: 25%;
-  margin: 5px; }
+div.border {
+  border-bottom: #71787E solid thin; }
 
 .circle {
   position: relative;
@@ -712,12 +774,6 @@ div img.pp {
     background-color: #009AD4; }
 
 body {
-  background: #DBDBDB;
+  background-color: #DBDBDB;
   margin: 0;
   padding: 0; }
-
-.picH {
-  width: 32px;
-  height: 32px;
-  position: relative;
-  top: 20%; }

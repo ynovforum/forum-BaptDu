@@ -2,3 +2,45 @@ extends includes/layout
 
 block content
     include includes/navbar
+
+    div.container_full_page
+        div.CS_6.CE_6.RS_1.RE_1
+            div.card.pad-28.padB-28.padT-28
+                img.cardPicture(src="https://cdna.artstation.com/p/assets/images/images/011/067/804/large/dmitriy-tityakov-nott-front-dmitriy-tityakov.jpg?1527691752")
+                div.align_column_row
+                    div
+                        h3.cardTitle Designing in US
+                        p.cardSubTile United States San Francisco
+                    div
+                        button.cardButton(type="submit" name="action") View
+
+        div.CS_7.CE_7.RS_1.RE_1
+            div.card.pad-28.padB-28.padT-28
+                img.cardPicture(src="https://cdna.artstation.com/p/assets/images/images/011/067/804/large/dmitriy-tityakov-nott-front-dmitriy-tityakov.jpg?1527691752")
+                div.align_column_row
+                    div
+                        h3.cardTitle Designing in US
+                        p.cardSubTile United States San Francisco
+                    div
+                        button.cardButton(type="submit" name="action") View
+
+        div.CS_6.CE_8.RS_2.RE_2
+                div.card.pad-28.padB-28
+                    h1.pad-25 All Tickets
+                    table
+                        tr
+                            th Tile
+                            th Date
+                            th Resolved
+                            th
+                        for questions in question
+                            tr
+                                td #{questions.title}
+                                td #{questions.created_at}
+                                td
+                                    if questions.resolvedAt === false
+                                        p No resolved
+                                    else
+                                        p Resolved
+                                td
+                                    a.tablea(href='/ticket/' + questions.id) View

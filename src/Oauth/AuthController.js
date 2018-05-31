@@ -2,6 +2,19 @@ const {User} = require('../../app/database/data');
 const bcrypt = require('bcrypt');
 
 
+
+
+
+/*
+*  Code d'inscription d'un utilisateur [RUser]
+* --------------------------------------------------
+* */
+
+exports.register_get = function (req, res) {
+
+    res.render('oauth/register', {user: req.user})
+};
+
 exports.register = function (req, res) {
 
     const bio = req.body.bio;
@@ -20,7 +33,7 @@ exports.register = function (req, res) {
                     picture: picture,
                     password: hash
                 });
-                res.redirect('/login');
+                res.redirect('/');
             })
             .catch((error) => {
                 res.render('500', {error: error});
@@ -29,3 +42,17 @@ exports.register = function (req, res) {
 
 
 };
+
+/*
+*  Code d'affichage du login question [LUser]
+* --------------------------------------------------
+* */
+exports.login = function (req, res) {
+    res.render('oauth/login', {user: req.user})
+};
+
+exports.logout = function (req, res) {
+    req.logout();
+    res.redirect('/');
+};
+

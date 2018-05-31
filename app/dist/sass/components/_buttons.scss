@@ -6,9 +6,14 @@ button {
   border: 3px solid #4CAF50;
   border-radius: 6px;
   color: white;
+  font-size: 15px;
   &.large {
     padding: 14px 25px;
     width: 100%;
+  }
+  &.medium {
+    padding: 10px 16px;
+    width: 25%;
   }
   &.small {
     padding: 6px 16px;

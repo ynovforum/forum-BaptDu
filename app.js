@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 
 const APIPoint = require('./src/api');
-const APIView = require('./website');
 
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -30,6 +29,5 @@ app.use(passport.session());
 
 
 app.use(APIPoint);
-app.use(APIView);
 
 app.listen(process.env.SRV_PORT);
