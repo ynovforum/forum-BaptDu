@@ -15,7 +15,9 @@ router.route('/addticket') // Route pour ajouter des questions
 
 router.route('/ticket/:questionId') // Route pour affichier une question
 
-    .get(question_controller.question_detail_get);
+    .get(question_controller.question_detail_get)
+
+    .post(question_controller.question_comment_create_post);
 
 router.route('/ticket/:questionId/edit') // Route pour modifier les questions
 

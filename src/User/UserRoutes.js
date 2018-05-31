@@ -3,15 +3,20 @@ const router = express.Router();
 
 const user_controller = require('./UserController');
 
-router.route('/')
-    .post(user_controller.users_create);
+router.route('/')  //   Route pour afficher toute les users
 
-router.route('/:userId')
-    .get(user_controller.user_detail)
+    .get(user_controller.user_list);
 
 
-    .patch(user_controller.user_update)
+router.route('/user/:userId/edit') // Route pour modifier les users
 
+    .get(user_controller.user_update_get)
+
+    .put(user_controller.user_update_patch);
+
+router.route('/user/:userId/delete') // Route pour supprimer un user
+
+    .get(user_controller.user_delete)
 
     .delete(user_controller.user_delete);
 

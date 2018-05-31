@@ -1,81 +1,82 @@
-const {User} = require('../../app/database/data');
+const {User, Question} = require('../../app/database/data');
+
+/*
+*  Code d'affichage des users [FindAll]
+* --------------------------------------------------
+* */
+
+exports.user_list = function (req, res) {
+
+    User
+        .findAll({
+            include: [Question]
+        })
+        .then((user) => {
+            res.render('admin/userList', {user})
+        })
+};
+
+/*
+*  Code de mise à jour d'une user [Update]
+* --------------------------------------------------
+* */
+
+exports.user_update_get = function (req, res) {
 
 
-exports.users_create = function (req, res) {
+    User
+        .findOne({
+            where: {
+                id: req.params.userId
+            }
+        })
+        .then((user) => {
+            res.render('admin/userEdit', {user})
+        })
+};
 
-    const username = req.body.username;
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
+
+exports.user_update_patch = function (req, res) {
+
+    const name = req.body.name;
     const email = req.body.email;
+    const bio = req.body.bio;
     const picture = req.body.picture;
-    const password = req.body.password;
 
     User
-        .sync()
-        .then(function () {
-            User.create({
-                username: username,
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
-                picture: picture,
-                password: password
-            });
-            res.redirect('/login');
-        })
-        .catch((error) => {
-            res.render('500', {error: error});
-        })
+        .update({name: name, email: email,bio: bio, picture: picture},
+            {where: {id: req.params.userId}}
+        ).then(() => {
+        res.redirect('/');
+    });
+}
+;
 
-};
+/*
+*  Code de suppretion d'une user [Deleted]
+* --------------------------------------------------
+* */
 
-exports.user_detail = function (req, res) {
-
-    const id = req.params.userId;
+exports.user_delete_get = function (req, res) {
 
     User
-        .find({
-            where: {id: id}
+        .findOne({
+            where: {
+                id: req.params.userId
+            }
         })
-        .then(User => res.json(User))
-        .catch((error) => {
-            res.render({error: error})
-        })
+        .then(() => {
+            res.redirect('/');
+        });
 };
-
-exports.user_update = function (req, res) {
-
-    const id = req.params.userId;
-    const updates = req.body.updates;
-
-    User
-        .find({
-            where: {id: id}
-        })
-        .then(User => {
-            return User.updateAttributes(updates)
-        })
-        .then(updatedUser => {
-            res.json(updatedUser);
-        })
-        .catch((error) => {
-            res.render({error: error})
-        })
-};
-
 
 exports.user_delete = function (req, res) {
 
-    const id = req.params.formationId;
-
-    Formations
+    User
         .destroy({
-            where: {id: id}
+            where: {id: req.params.userId}
         })
-        .then(deleteFormation => {
-            res.json(deleteFormation);
-        })
-        .catch((error) => {
-            res.render({error: error})
-        })
+        .then(() => {
+            res.redirect('/');
+        });
 };

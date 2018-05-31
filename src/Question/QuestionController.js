@@ -1,4 +1,4 @@
-const {Question, User} = require('../../app/database/data');
+const {Question, User, Comment} = require('../../app/database/data');
 
 /*
 *  Code d'affichage des questions [FindAll]
@@ -55,14 +55,46 @@ exports.question_create_post = function (req, res) {
 exports.question_detail_get = function (req, res) {
 
     Question
-        .findOne({
-            where: {
-                id: req.params.questionId
-            }, include: [User]
+        .sync()
+        .then(() => {
+            return Question.find({
+                where: {
+                    id: req.params.questionId
+                }, include: [
+                    User,
+                    {model: Comment, include:User}
+                ]
+            });
         })
         .then((question) => {
             res.render('ticket/ticket', {question, user: req.user});
         })
+};
+
+
+/*
+*  Code de création d'un commentaire [CreateComment]
+* --------------------------------------------------
+* */
+
+exports.question_comment_create_post = function (req, res) {
+
+    const content = req.body.content;
+
+    Comment
+        .sync()
+        .then(function () {
+            Comment.create({
+                content: content,
+                user_id: req.user.id
+            });
+            res.redirect('/');
+        })
+        .catch((error) => {
+            res.render('500', {error: error});
+            console.log(error)
+        })
+
 };
 
 /*
