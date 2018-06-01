@@ -5,7 +5,7 @@ module.exports = (database, DataType) => {
             primaryKey: true,
             defaultValue: DataType.UUIDV4
         },
-        comment_content: {
+        content: {
             type: DataType.TEXT,
             require: true
         },

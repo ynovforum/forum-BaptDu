@@ -1,0 +1,51 @@
+{% extends 'includes/layout.twig' %}
+
+    {% block content %}
+        <div class="row">
+            <div class="col-12">
+                <div class="card__large center">
+                    <form class="auth" method='POST' action='/oauth/login' enctype="x-www-form-urlencoded">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1> Welcome Back ! Please Login</h1>
+                            </div>
+                            <div class="col-12">
+                                <label for="email">Sign up with your e-mail address</label>
+                                <input id="email" type="text" name="username">
+                            </div>
+                            <div class="col-12">
+                                <label for="password">Password</label>
+                                <input id="password" type="password" name="password">
+                            </div>
+                            <div class="col-12">
+                                <button class="large" type="submit" name="action"> Sign in to Dashboard</button>
+                            </div>
+                            <div class="row center_element">
+                                <div class="col-3">
+                                </div>
+                                <div class="col-6 center">
+                                    <p>Login via social networks</p>
+                                </div>
+                                <div class="col-3">
+                                </div>
+                            </div>
+                            <div class="row center_element">
+                                <div class="col-2">
+                                    <img src="https://png.icons8.com/color/100/000000/twitter-squared.png">
+                                </div>
+                                <div class="col-2">
+                                    <img src="https://png.icons8.com/color/100/000000/facebook.png">
+                                </div>
+                                <div class="col-2">
+                                    <img src="https://png.icons8.com/color/100/000000/pinterest.png">
+                                </div>
+                                <div class="col-2">
+                                    <img src="https://png.icons8.com/color/100/000000/linkedin.png">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

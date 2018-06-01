@@ -1,0 +1,48 @@
+{% extends 'includes/layout.twig' %}
+
+    {% block content %}
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-content  ticket">
+                        <div class="row pad">
+                            <div class="col-1">
+                                <img class="ticket_pp" src="{{ question.user.picture }}" alt="">
+                            </div>
+                            <div class="col-10 pad">
+                                <h1> {{ question.title }}</h1>
+                                <h3>{{ question.user.name }}</h3>
+                            </div>
+                            <div class="col-12 comment">
+                                {{ question.content }}
+                            </div>
+                            {% for comments in question.comments %}
+                                <div class="col-1">
+                                    <img class="ticket_pc center" src="{{ comments.user.picture }}">
+                                </div>
+                                <div class="col-11 pad">
+                                    <h1> {{ comments.user.name }}</h1>
+                                    <p> {{ comments.content }}</p>
+                                </div>
+                            {% else %}
+                                <div class="col-12 pad">
+                                    <p>Aucun commentaire pour le moment</p>
+                                </div>
+                            {% endfor %}
+                            <div class="col-12">
+                                <form class="ticket_form" method='POST' action='/ticket/{{ question.id }}'
+                                      enctype="x-www-form-urlencoded">
+                                    <label for="content"> Your response</label>
+                                    <textarea id="content"></textarea>
+                                    <button class="btnValide right" type="submit" name="action"> Envoyer</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

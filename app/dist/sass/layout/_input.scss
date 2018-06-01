@@ -25,12 +25,13 @@ input:not([value=""]){
 textarea {
   background-color: #FFFFFF;
   width: 100%;
-  padding: 12px 20px;
+  padding: 0 20px;
   margin: 8px 0;
   display: inline-block;
   border-radius: 4px;
   box-sizing: border-box;
   resize: none;
+  height: 90px;
   &:focus{
     border: $border-color solid thin;
   }

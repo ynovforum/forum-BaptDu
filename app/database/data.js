@@ -15,8 +15,8 @@ const Comment = CommentModel(database, Sequelize);
 Question.belongsTo(User);
 User.hasMany(Question);
 
-Question.belongsTo(Comment);
-Comment.hasMany(Question);
+Comment.belongsTo(Question);
+Question.hasMany(Comment);
 
 Comment.belongsTo(User);
 User.hasMany(Comment);

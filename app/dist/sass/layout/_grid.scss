@@ -1,82 +1,20 @@
-.container_full_page{
-  display: grid;
-  grid-row-gap: 45px;
-  grid-column-gap: 75px;
-  grid-template-columns: repeat(12, [col] 1fr);
-  grid-template-rows: repeat(2, [row] auto);
-  margin-left: auto;
-  margin-right: auto;
-  opacity: .7;
+$grid_row: 12;
+
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  //opacity: .3;
 }
 
-@for $i from 1 through 13 {
-  .CS_#{$i} {
-    grid-column-start: 1 + $i;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@for $i from 1 through $grid_row {
+  .col-#{$i} {
+    flex-basis: (100 / ($grid_row / $i) ) * 1%;
   }
 }
 
-@for $i from 1 through 13 {
-  .CE_#{$i} {
-    grid-column-end: 1 + $i;
-  }
-}
-
-@for $i from 1 through 5 {
-  .RS_#{$i} {
-    grid-row-start: 1 + $i;
-  }
-}
-
-@for $i from 1 through 5 {
-  .RE_#{$i} {
-    grid-row-end: 1 + $i;
-  }
-}
-
-// width
-@for $i from 1 through 10{
-  .w#{$i} {
-    width: 100% / $i
-  }
-}
-
-// margin
-@for $i from 1 through 5{
-  .ml-#{$i} {
-    margin-left: 100% / $i
-  }
-}
-
-@for $i from 1 through 5{
-  .mr-#{$i} {
-    margin-right: 100% / $i
-  }
-}
-
-//padding
-
-@for $i from 1 through 30{
-  .padT-#{$i} {
-    padding-top: 100% / $i;
-  }
-}
-
-@for $i from 1 through 30{
-  .pad-#{$i} {
-    padding-left: 100% / $i;
-    padding-right: 100% / $i
-  }
-   &.padB-#{$i} {
-     padding-bottom: 100% / $i;
-   }
-}
-
-.right{
-  padding-right: 12%;
-  padding-left: 1%;
-}
-
-.left{
-  padding-left: 8%;
-  padding-right: 6%;
-}

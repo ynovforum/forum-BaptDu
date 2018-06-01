@@ -1,0 +1,76 @@
+{% extends 'includes/layout.twig' %}
+
+    {% block content %}
+        <div class="row center_element">
+            <div class="col-3">
+                <div class="card__large left">
+                    <picture class="thumbnail">
+                        <img class="HomeCard"
+                             src="https://cdna.artstation.com/p/assets/images/images/010/998/260/large/mickael-lelievre-shnail-01.jpg?1527332330"
+                             alt="Norwegian boller">
+                    </picture>
+                    <div class="card-content row">
+                        <div class="col-8">
+                            <h2>Vacation Image 02</h2>
+                            <p>test</p>
+                        </div><!-- .card-content -->
+                        <div class="col-4">
+                            <a href="/ticket/{{ questions.id }}" class="large Lcard"> Voir </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card__large right">
+                    <picture class="thumbnail">
+                        <img class="HomeCard"
+                             src="https://cdna.artstation.com/p/assets/images/images/010/998/260/large/mickael-lelievre-shnail-01.jpg?1527332330"
+                             alt="Norwegian boller">
+                    </picture>
+                    <div class="card-content">
+                        <div class="col-8">
+                            <h2>Vacation Image 02</h2>
+                            <p>test</p>
+                        </div><!-- .card-content -->
+                        <div class="col-4">
+                                <a href="/ticket/{{ questions.id }}" class="large Lcard"> Voir </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card__large center">
+                        <div class="card-content">
+                            <h1>Toute les questions</h1>
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <th>Titre</th>
+                                <th>Date</th>
+                                <th>Resolved</th>
+                                <th class="empty"></th>
+                            </tr>
+                            {% for questions in question %}
+                            <tr>
+                                <td>{{ questions.title }}</td>
+                                <td>{{ questions.created_at }}</td>
+                                {% if questions.resolvedAt == false %}
+                                <td>En attente</td>
+                                {% else %}
+                                <td>Valider</td>
+                                {% endif %}
+                                <td class="edit-buttons center_element">
+                                    <a href="/ticket/{{ questions.id }}" class="large Lcard"> Voir </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+

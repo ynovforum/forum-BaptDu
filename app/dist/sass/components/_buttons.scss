@@ -10,6 +10,12 @@ button {
   &.large {
     padding: 14px 25px;
     width: 100%;
+     &.Lcard{
+       width: 60%;
+       margin-left: 5em;
+       margin-right: 35px;
+       margin-top: -0.5em;
+     }
   }
   &.medium {
     padding: 10px 16px;
@@ -22,6 +28,24 @@ button {
   }
 }
 
+a {
+  background-color: #25B10E;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: opacity 0.5ms ease-in-out;
+  border: 3px solid #4CAF50;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  margin-left: 15px;
+  &.large {
+    padding: 5px 30px;
+    &.Lcard{
+      margin-top: 0.5em;
+      width: 100%;
+    }
+  }
+}
 button:hover {
   background-color: #1F980A;
 }

@@ -12,7 +12,7 @@ const bcrypt = require('bcrypt');
 
 exports.register_get = function (req, res) {
 
-    res.render('oauth/register', {user: req.user})
+    res.render('oauth/register.twig', {user: req.user})
 };
 
 exports.register = function (req, res) {
@@ -48,7 +48,7 @@ exports.register = function (req, res) {
 * --------------------------------------------------
 * */
 exports.login = function (req, res) {
-    res.render('oauth/login', {user: req.user})
+    res.render('oauth/login.twig', {user: req.user})
 };
 
 exports.logout = function (req, res) {

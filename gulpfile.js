@@ -57,7 +57,9 @@ gulp.task('server', ['sass'], function () {
     });
 
     gulp.watch([source + "/sass/*.scss", source + "/sass/**/*.scss"], ['sass']).on('change', browserSync.reload);
-    gulp.watch(["views/**/*.pug","views/*.pug"]).on('change', browserSync.reload);
+    gulp.watch(["views/**/*.twig","views/*.twig"]).on('restart', (r) => {
+        browserSync.reload();
+    });
 });
 
 // Tâche "prod" = Build + minify

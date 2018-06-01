@@ -12,7 +12,7 @@ exports.user_list = function (req, res) {
             include: [Question]
         })
         .then((user) => {
-            res.render('admin/userList', {user})
+            res.render('admin/userList.twig', {user})
         })
 };
 
@@ -31,7 +31,7 @@ exports.user_update_get = function (req, res) {
             }
         })
         .then((user) => {
-            res.render('admin/userEdit', {user})
+            res.render('admin/userEdit.twig', {user})
         })
 };
 

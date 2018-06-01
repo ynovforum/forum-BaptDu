@@ -10,7 +10,7 @@ exports.question_list = function (req, res) {
     Question
         .findAll()
         .then((question) => {
-            res.render('home', {question, user: req.user})
+            res.render('home.twig', {question, user: req.user})
         })
 };
 
@@ -20,8 +20,13 @@ exports.question_list = function (req, res) {
 * */
 
 exports.question_create_get = function (req, res) {
+    const user = req.user;
 
-    res.render('ticket/ticketAdd', {user: req.user})
+    if (user){
+        res.render('ticket/ticketAdd.twig', {user})
+    }else {
+        res.render('oauth/login')
+    }
 
 };
 
@@ -67,7 +72,7 @@ exports.question_detail_get = function (req, res) {
             });
         })
         .then((question) => {
-            res.render('ticket/ticket', {question, user: req.user});
+            res.render('ticket/ticket.twig', {question, user: req.user});
         })
 };
 
@@ -86,7 +91,8 @@ exports.question_comment_create_post = function (req, res) {
         .then(function () {
             Comment.create({
                 content: content,
-                user_id: req.user.id
+                user_id: req.user.id,
+                question_id: req.params.questionId
             });
             res.redirect('/');
         })
@@ -112,7 +118,7 @@ exports.question_update_get = function (req, res) {
             }
         })
         .then((question) => {
-            res.render('ticket/ticketEdit', {question, user: req.user})
+            res.render('ticket/ticketEdit.twig', {question, user: req.user})
         })
 };
 

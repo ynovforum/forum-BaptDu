@@ -1,10 +1,10 @@
-extends ../includes/layout
+{% extends 'includes/layout.twig' %}
 
-block content
-    link(rel='stylesheet', href='/css/settings.css')
-    include ../includes/navbar
+    {% block content %}
 
-    div.container_full_page
+    {% endblock %}
+
+div.container_full_page
         div.CS_2.CE_5.RS_1.RE_2
             div.card
                 div.pad-20.padB-25.padT-28

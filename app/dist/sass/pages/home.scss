@@ -1,28 +1,36 @@
-table{
-  border-collapse: collapse;
-  display: block;
-  border-radius: 2%;
+table.table {
   width: 100%;
-  margin: 0 auto;
-  background-color: white;
+  background: white;
+  border-radius: 5%;
 }
 
-td, th {
-  border-bottom: 1px solid #ddd;
-  padding-top: 10px;
-  width: 35%;
-}
-
-th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+.table th, .table td {
   text-align: left;
-  background-color: #F5F8FA;
-  color: $font-color-black;
+  padding: 0.25em;
 }
 
-.table{
-  width: 100px;
-  padding: 5px 35px;
-  margin: auto;
+.table tr {
+  border-bottom: 1px solid #DDD;
+}
+
+td.edit-buttons {
+  text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  tr {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0;
+    border: 1px solid rgba(3, 3, 3, 0.2);
+  }
+  td, th {
+    flex: 1 1 150px;
+    border: 0.5px solid rgba(3, 3, 3, 0.2);
+  }
+  td.edit-buttons, td.empty {
+    flex: 1 0 90%;
+    text-align: center;
+  }
 }

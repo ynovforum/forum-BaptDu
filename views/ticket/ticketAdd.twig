@@ -1,0 +1,14 @@
+{% extends 'includes/layout.twig' %}
+
+    {% block content %}
+        <form method="POST" action="/addticket" enctype="x-www-form-urlencoded">
+            <label for="title">Your Title</label>
+                <input type="text" name="title" id="title">
+
+            <textarea name="content" title="content" id="content" cols="30" rows="10"></textarea>
+                 <button class="submit" name="action"> Submit</button>
+        </form>
+    {% endblock %}
+
+
+

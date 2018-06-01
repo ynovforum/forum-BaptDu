@@ -1,9 +1,11 @@
-.nav {
+.navigation {
+  display: flex;
   background-color: #269CF4;
-  opacity: .3;
-  a {
+  opacity: .5;
+nav  a {
     display: block;
     color: white;
+    background-color: transparent;
     text-align: center;
     padding: 13px 16px;
     text-decoration: none;
@@ -11,6 +13,33 @@
     border-radius: 10%;
     &:hover {
       background-color: #1166A5;
+    }
+  }
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  li {
+    float: left;
+    padding: 10px;
+    p {
+      margin: 5px 0 0;
+    }
+  }
+  img {
+    &.pp {
+      width: 32px;
+      height: 32px;
+      &.pi {
+        margin: 5px;
+        padding: 0;
+        border-radius: 0;
+      }
     }
   }
 }
